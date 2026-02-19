@@ -23,14 +23,14 @@
 </head>
 <body class="min-h-screen bg-base-200 max-w-lg mx-auto">
     <!-- Header section -->
-     <header class="bg-white border-b-[1px] border-gray-200">
+     <header class="bg-white border-b-[1px]  sticky top-0 border-gray-200">
         <nav class="flex justify-between items-center  w-11/12 mx-auto py-5">
             <div class="flex gap-3">
                 <div class="w-[55px]">
                     <img src="./assets/logo.png" alt="">
                 </div>
                 <div>
-                    <h4 class="text-[1.125rem] text-[#080808] font-extrabold">$45000</h4>
+                    <h4 class="text-[1.125rem] text-[#080808] font-extrabold">$<span id="current-balance" >100000</span></h4>
                     <p class="text-[0.875rem] text-[#969697]">Available Balance</p>
                 </div>
             </div>
@@ -156,6 +156,24 @@
         </div>
     </section>
      <!-- Payment Section Ended -->
+    <!-- Cash-out Form -->
+     <section id="cash-out" class="w-11/12 mx-auto">
+        <h2 class="text-[#080808]/90 text-[1.125rem] font-semibold mb-4">Cash Out</h2>
+        <div class="card bg-base-100 w-full  rounded-2xl">
+            <div class="card-body">
+        <fieldset class="fieldset">
+          <label class="label text-[#080808]/70 font-medium text-base">Agent Number</label>
+          <input id="cash-out-tel" maxlength="11" minlength="11" type="tel"  class="input w-full bg-base-200 border-none outline-none rounded-full placeholder:text-[#969697]" placeholder="Enter 11 digit number" />
+          <label class="label text-[#080808]/70 font-medium text-base">Amount</label>
+          <input id="cash-out-amount" type="number" class="input w-full bg-base-200 border-none outline-none rounded-full placeholder:text-[#969697]" placeholder="Enter amount to withdraw" />
+          <label class="label text-[#080808]/70 font-medium text-base">Pin Number</label>
+          <input id="cash-out-pin" maxlength="4" minlength="4" type="password" class="input w-full bg-base-200 border-none outline-none rounded-full placeholder:text-[#969697]" placeholder="Enter 4 digit pin number" />
+          <button id="cash-out-btn" class="btn btn-primary rounded-full mt-4 text-[1.25rem]">Withdraw Money</button>
+        </fieldset>
+      </div>
+        </div>
+     </section>
     <script src="./script/dashboard.js"></script>
+    <script src="./script/machine.js"></script>
 </body>
 </html>

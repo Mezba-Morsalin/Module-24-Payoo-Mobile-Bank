@@ -15,3 +15,31 @@ const items = document.getElementsByClassName("div")
     })
         
 }
+// Cash Out 
+document.getElementById("cash-out-btn").addEventListener("click", function () {
+    const agentNumber = getValueFromInput("cash-out-tel");
+    if (agentNumber.length !== 11) {
+        alert("Invalid Number");
+        return;
+    }
+    const cashOutAmount = Number(getValueFromInput("cash-out-amount"));
+    const currentBalance = document.getElementById("current-balance");
+    const currentBalanceValue = Number(currentBalance.innerText);
+    
+    if (cashOutAmount > currentBalanceValue) {
+        alert("Insufficient Balance");
+        return;
+    }
+
+    const pin = getValueFromInput("cash-out-pin");
+    
+    if (pin.length !== 4) {
+        alert("Invalid Pin");
+        return;
+    }
+
+    const updateBalance = currentBalanceValue - cashOutAmount;
+    currentBalance.innerText = updateBalance;
+
+    alert("Cash Out Successful")
+})
