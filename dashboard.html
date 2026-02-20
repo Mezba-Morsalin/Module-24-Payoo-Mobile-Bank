@@ -49,35 +49,115 @@
      </section>
      <section class="bg-white pt-8 pb-7 rounded-b-2xl">
         <div class="grid grid-cols-3 gap-4 w-11/12 mx-auto">
-            <div id="" class="border-[1px] border-gray-200 text-center px-7 py-5 rounded-xl div div2">
+            <div onclick="showOnly('add-money')" class="border-[1px] border-gray-200 text-center px-5 py-5 rounded-xl div cursor-pointer div2">
                 <img class="mx-auto" src="./assets/opt-1.png" alt="">
-                <p id="" class="text-[0.700rem] text-[#080808]/70 mt-2 p p2">Add Money</p>
+                <p class="text-[0.700rem] text-[#080808]/70 mt-2 p p2">Add Money</p>
             </div>
-            <div class="border-[1px] border-gray-200 text-center px-7 py-5 rounded-xl div">
+            <div onclick="showOnly('cash-out')" class="border-[1px] border-gray-200 text-center px-5 py-5 rounded-xl div cursor-pointer">
                 <img class="mx-auto" src="./assets/opt-2.png" alt="">
                 <p class="text-[0.700rem] text-[#080808]/70 mt-2 p">Cash-out</p>
             </div>
-            <div class="border-[1px] border-gray-200 text-center px-7 py-5 rounded-xl div">
+            <div onclick="showOnly('transfer-money')" class="border-[1px] border-gray-200 text-center px-3 py-5 rounded-xl div cursor-pointer">
                 <img class="mx-auto" src="./assets/opt-3.png" alt="">
                 <p class="text-[0.700rem] text-[#080808]/70 mt-2 p">Transfer Money</p>
             </div>
-            <div class="border-[1px] border-gray-200 text-center px-7 py-5 rounded-xl div">
+            <div onclick="showOnly('get-bonus')" class="border-[1px] border-gray-200 text-center px-5 py-5 rounded-xl div cursor-pointer">
                 <img class="mx-auto" src="./assets/opt-4.png" alt="">
                 <p class="text-[0.700rem] text-[#080808]/70 mt-2 p">Get Bonus</p>
             </div>
-            <div class="border-[1px] border-gray-200 text-center px-7 py-5 rounded-xl div">
+            <div class="border-[1px] border-gray-200 text-center px-5 py-5 rounded-xl div cursor-pointer">
                 <img class="mx-auto" src="./assets/opt-5.png" alt="">
                 <p class="text-[0.700rem] text-[#080808]/70 mt-2 p">Pay Bill</p>
             </div>
-            <div class="border-[1px] border-gray-200 text-center px-7 py-5 rounded-xl div">
+            <div class="border-[1px] border-gray-200 text-center px-5 py-5 rounded-xl div cursor-pointer">
                 <img class="mx-auto" src="./assets/opt-6.png" alt="">
                 <p class="text-[0.700rem] text-[#080808]/70 mt-2 p">Transactions</p>
             </div>
         </div>
      </section>
      <!-- select section ended -->
-     <!-- Payment Section -->
-    <section class="mt-12 pb-5 space-y-4">
+    <!-- Add Money Form -->
+     <section id="add-money" class="w-11/12 mx-auto mt-7 hidden">
+        <h2 class="text-[#080808]/90 text-[1.125rem] font-semibold mb-4">Add Money</h2>
+        <div class="card bg-base-100 w-full  rounded-2xl">
+            <div class="card-body">
+        <fieldset class="fieldset">
+          <label class="label text-[#080808]/70 font-medium text-base">Select A Bank</label>
+            <select id="add-money-bank" class="select w-full bg-base-200 border-none outline-none rounded-full">
+            <option class="text-[#080808]/70" disabled selected>Select Bank</option>
+            <option>Eastern Bank</option>
+            <option>Brac Bank</option>
+            <option>Dutch Bangla Bank</option>
+            <option>Sonali Bank</option>
+            <option>Janata Bank</option>
+            <option>UCB Bank</option>
+            <option>Social Islami Bank</option>
+            <option>Premier Bank</option>
+            </select>
+          <label class="label text-[#080808]/70 font-medium text-base">Bank Account Number</label>
+          <input id="add-money-tel" maxlength="11" minlength="11" type="tel"  class="input w-full bg-base-200 border-none outline-none rounded-full placeholder:text-[#969697]" placeholder="Enter 11 digit Account number" />
+          <label class="label text-[#080808]/70 font-medium text-base">Amount to Add</label>
+          <input id="add-money-amount" type="number" class="input w-full bg-base-200 border-none outline-none rounded-full placeholder:text-[#969697]" placeholder="Add Amount to Withdraw" />
+          <label class="label text-[#080808]/70 font-medium text-base">Pin Number</label>
+          <input id="add-money-pin" maxlength="4" minlength="4" type="password" class="input w-full bg-base-200 border-none outline-none rounded-full placeholder:text-[#969697]" placeholder="Enter 4 digit pin number" />
+          <button id="add-money-btn" class="btn btn-primary rounded-full mt-4 text-[1.25rem]">Add Money</button>
+        </fieldset>
+      </div>
+        </div>
+     </section>
+     <!-- Add Money form Ended -->
+    <!-- Cash-out Form -->
+     <section id="cash-out" class="w-11/12 mx-auto mt-7 hidden">
+        <h2 class="text-[#080808]/90 text-[1.125rem] font-semibold mb-4">Cash Out</h2>
+        <div class="card bg-base-100 w-full  rounded-2xl">
+            <div class="card-body">
+        <fieldset class="fieldset">
+          <label class="label text-[#080808]/70 font-medium text-base">Agent Number</label>
+          <input id="cash-out-tel" maxlength="11" minlength="11" type="tel"  class="input w-full bg-base-200 border-none outline-none rounded-full placeholder:text-[#969697]" placeholder="Enter 11 digit number" />
+          <label class="label text-[#080808]/70 font-medium text-base">Amount</label>
+          <input id="cash-out-amount" type="number" class="input w-full bg-base-200 border-none outline-none rounded-full placeholder:text-[#969697]" placeholder="Enter amount to withdraw" />
+          <label class="label text-[#080808]/70 font-medium text-base">Pin Number</label>
+          <input id="cash-out-pin" maxlength="4" minlength="4" type="password" class="input w-full bg-base-200 border-none outline-none rounded-full placeholder:text-[#969697]" placeholder="Enter 4 digit pin number" />
+          <button id="cash-out-btn" class="btn btn-primary rounded-full mt-4 text-[1.25rem]">Withdraw Money</button>
+        </fieldset>
+      </div>
+        </div>
+     </section>
+     <!-- Cash-out form Ended -->
+    <!-- Transfer Money Form -->
+     <section id="transfer-money" class="w-11/12 mx-auto mt-7 hidden">
+        <h2 class="text-[#080808]/90 text-[1.125rem] font-semibold mb-4">Transfer Money</h2>
+        <div class="card bg-base-100 w-full  rounded-2xl">
+            <div class="card-body">
+        <fieldset class="fieldset">
+          <label class="label text-[#080808]/70 font-medium text-base">User Account Number</label>
+          <input id="transfer-money-tel" maxlength="11" minlength="11" type="tel"  class="input w-full bg-base-200 border-none outline-none rounded-full placeholder:text-[#969697]" placeholder="Enter 11 digit number" />
+          <label class="label text-[#080808]/70 font-medium text-base">Amount</label>
+          <input id="transfer-money-amount" type="number" class="input w-full bg-base-200 border-none outline-none rounded-full placeholder:text-[#969697]" placeholder="Enter amount to withdraw" />
+          <label class="label text-[#080808]/70 font-medium text-base">Pin Number</label>
+          <input id="transfer-money-pin" maxlength="4" minlength="4" type="password" class="input w-full bg-base-200 border-none outline-none rounded-full placeholder:text-[#969697]" placeholder="Enter 4 digit pin number" />
+          <button id="transfer-money-btn" class="btn btn-primary rounded-full mt-4 text-[1.25rem]">Withdraw Money</button>
+        </fieldset>
+      </div>
+        </div>
+     </section>
+     <!-- transfer-money form Ended -->
+    <!-- Get Bonus Form -->
+     <section id="get-bonus" class="w-11/12 mx-auto mt-7 hidden">
+        <h2 class="text-[#080808]/90 text-[1.125rem] font-semibold mb-4">Get Bonus</h2>
+        <div class="card bg-base-100 w-full  rounded-2xl">
+            <div class="card-body">
+        <fieldset class="fieldset">
+          <label class="label text-[#080808]/70 font-medium text-base">Enter Bonus Coupon</label>
+          <input id="get-bonus-amount" type="text" class="input w-full bg-base-200 border-none outline-none rounded-full placeholder:text-[#969697]" placeholder="Enter your coupon" />
+          <button id="get-bonus-btn" class="btn btn-primary rounded-full mt-4 text-[1.25rem]">Get Bonus</button>
+        </fieldset>
+      </div>
+        </div>
+     </section>
+     <!-- Get Bonus form Ended -->
+      <!-- Payment Section -->
+    <section id="payment" class="mt-12 pb-5 space-y-4">
         <div class="w-11/12 mx-auto flex justify-between items-center">
             <h3 class="text-[#080808]/90 text-[1.125rem] font-semibold">Latest Payment</h3>
             <a class="text-[0.875rem] text-[#080808]/50" href="#">View All</a>
@@ -156,23 +236,6 @@
         </div>
     </section>
      <!-- Payment Section Ended -->
-    <!-- Cash-out Form -->
-     <section id="cash-out" class="w-11/12 mx-auto">
-        <h2 class="text-[#080808]/90 text-[1.125rem] font-semibold mb-4">Cash Out</h2>
-        <div class="card bg-base-100 w-full  rounded-2xl">
-            <div class="card-body">
-        <fieldset class="fieldset">
-          <label class="label text-[#080808]/70 font-medium text-base">Agent Number</label>
-          <input id="cash-out-tel" maxlength="11" minlength="11" type="tel"  class="input w-full bg-base-200 border-none outline-none rounded-full placeholder:text-[#969697]" placeholder="Enter 11 digit number" />
-          <label class="label text-[#080808]/70 font-medium text-base">Amount</label>
-          <input id="cash-out-amount" type="number" class="input w-full bg-base-200 border-none outline-none rounded-full placeholder:text-[#969697]" placeholder="Enter amount to withdraw" />
-          <label class="label text-[#080808]/70 font-medium text-base">Pin Number</label>
-          <input id="cash-out-pin" maxlength="4" minlength="4" type="password" class="input w-full bg-base-200 border-none outline-none rounded-full placeholder:text-[#969697]" placeholder="Enter 4 digit pin number" />
-          <button id="cash-out-btn" class="btn btn-primary rounded-full mt-4 text-[1.25rem]">Withdraw Money</button>
-        </fieldset>
-      </div>
-        </div>
-     </section>
     <script src="./script/dashboard.js"></script>
     <script src="./script/machine.js"></script>
 </body>
