@@ -40,7 +40,17 @@ document.getElementById("cash-out-btn").addEventListener("click", function () {
     const updateBalance = currentBalance - cashOutAmount;
     setBalance(updateBalance);
     const time = new Date().toLocaleString()
-    alert(`Cash Out Successful From Payoo Agent ${agentNumber} at ${time}`)
+    alert(`Cash Out Successful $${cashOutAmount} From Payoo Agent ${agentNumber} at ${time}`);
+
+    const history = document.getElementById("transaction-history");
+
+    const newHistory = document.createElement("div")
+    newHistory.innerHTML = `
+    <div class="transaction-class bg-base-200 p-5 mb-4 rounded-2xl">
+    Cash Out Successful $${cashOutAmount} From Payoo Agent ${agentNumber} at ${time}
+    </div>
+    `
+    history.append(newHistory)
 })
 // Add Money
 document.getElementById("add-money-btn").addEventListener("click", function () {
@@ -73,7 +83,17 @@ document.getElementById("add-money-btn").addEventListener("click", function () {
     setBalance(updateBalance);
     const time = new Date().toLocaleString();
 
-    alert(`Your Money Added Successfully From ${selectBank} at ${time}`)
+    alert(`Your Money Added Successfully $${addMoneyAmount} From ${selectBank} at ${time}`)
+
+    const history = document.getElementById("transaction-history");
+    const newHistory = document.createElement("div");
+
+    newHistory.innerHTML =`
+    <div class="transaction-class bg-base-200 p-5 mb-4 rounded-2xl">
+    Your Money Added Successfully $${addMoneyAmount}  From ${selectBank} at ${time}
+    </div>
+    `
+    history.append(newHistory)
 })
 // Transfer Money
 document.getElementById("transfer-money-btn").addEventListener("click", function () {
@@ -105,7 +125,16 @@ document.getElementById("transfer-money-btn").addEventListener("click", function
 
     const time = new Date().toLocaleString()
 
-    alert(`Money Transfer Successfully to ${userNumber} at ${time}`)
+    alert(`Money Transfer Successfully $${transferAmount} to ${userNumber} at ${time}`)
+
+    const history = document.getElementById("transaction-history");
+    const newHistory = document.createElement("div");
+    newHistory.innerHTML = `
+    <div class="transaction-class bg-base-200 p-5 mb-4 rounded-2xl">
+    Money Transfer Successfully $${transferAmount} to User Number ${userNumber} at ${time}
+    </div>
+    `
+    history.append(newHistory);
 })
 // Get bonus
 document.getElementById("get-bonus-btn").addEventListener("click", function () {
@@ -120,6 +149,14 @@ document.getElementById("get-bonus-btn").addEventListener("click", function () {
     else {
         alert("Invalid Coupon")
     }
+    const history = document.getElementById("transaction-history");
+    const newHistory = document.createElement("div");
+    newHistory.innerHTML = `
+    <div class="transaction-class bg-base-200 p-5 mb-4 rounded-2xl">
+    Congratulations You Have Won 500$ From Payoo  ${time}
+    </div>
+    `
+    history.append(newHistory)
 })
 // Pay bill
 document.getElementById("pay-bill-btn").addEventListener("click", function () {
@@ -153,4 +190,13 @@ document.getElementById("pay-bill-btn").addEventListener("click", function () {
     setBalance(updateBalance);
     const time = new Date().toLocaleString()
     alert(`Bill is Successfully Paid From ${selectBank} ${time}`)
+
+    const history = document.getElementById("transaction-history");
+    const newHistory = document.createElement("div");
+    newHistory.innerHTML = `
+    <div class="transaction-class bg-base-200 p-5 mb-4 rounded-2xl">
+    Bill is Successfully Paid $${payBillAmount} From ${selectBank} ${time}
+    </div>
+    `
+    history.append(newHistory);
 })
