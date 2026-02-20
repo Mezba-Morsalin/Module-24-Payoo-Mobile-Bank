@@ -65,11 +65,11 @@
                 <img class="mx-auto" src="./assets/opt-4.png" alt="">
                 <p class="text-[0.700rem] text-[#080808]/70 mt-2 p">Get Bonus</p>
             </div>
-            <div class="border-[1px] border-gray-200 text-center px-5 py-5 rounded-xl div cursor-pointer">
+            <div  onclick="showOnly('pay-bill')" class="border-[1px] border-gray-200 text-center px-5 py-5 rounded-xl div cursor-pointer">
                 <img class="mx-auto" src="./assets/opt-5.png" alt="">
                 <p class="text-[0.700rem] text-[#080808]/70 mt-2 p">Pay Bill</p>
             </div>
-            <div class="border-[1px] border-gray-200 text-center px-5 py-5 rounded-xl div cursor-pointer">
+            <div onclick="showOnly('payment')" class="border-[1px] border-gray-200 text-center px-5 py-5 rounded-xl div cursor-pointer">
                 <img class="mx-auto" src="./assets/opt-6.png" alt="">
                 <p class="text-[0.700rem] text-[#080808]/70 mt-2 p">Transactions</p>
             </div>
@@ -156,8 +156,42 @@
         </div>
      </section>
      <!-- Get Bonus form Ended -->
+    <!-- Pay Bill Form -->
+     <section id="pay-bill" class="w-11/12 mx-auto mt-7 hidden">
+        <h2 class="text-[#080808]/90 text-[1.125rem] font-semibold mb-4">Select To Pay</h2>
+        <div class="card bg-base-100 w-full  rounded-2xl">
+            <div class="card-body">
+        <fieldset class="fieldset">
+          <label class="label text-[#080808]/70 font-medium text-base">Select A Bank</label>
+            <select id="pay-bill-bank" class="select w-full bg-base-200 border-none outline-none rounded-full">
+            <option class="text-[#080808]/70" disabled selected>Select Bank</option>
+            <option>Eastern Bank</option>
+            <option>Brac Bank</option>
+            <option>Dutch Bangla Bank</option>
+            <option>Sonali Bank</option>
+            <option>Janata Bank</option>
+            <option>UCB Bank</option>
+            <option>Social Islami Bank</option>
+            <option>Premier Bank</option>
+            <option>Visa Card</option>
+            <option>Master Card</option>
+            <option>Bkash</option>
+            <option>Nagad</option>
+            </select>
+          <label class="label text-[#080808]/70 font-medium text-base">Biller Account Number</label>
+          <input id="pay-bill-tel" maxlength="11" minlength="11" type="tel"  class="input w-full bg-base-200 border-none outline-none rounded-full placeholder:text-[#969697]" placeholder="Enter account number" />
+          <label class="label text-[#080808]/70 font-medium text-base">Amount to Pay</label>
+          <input id="pay-bill-amount" type="number" class="input w-full bg-base-200 border-none outline-none rounded-full placeholder:text-[#969697]" placeholder="Add Amount to pay" />
+          <label class="label text-[#080808]/70 font-medium text-base">Pin Number</label>
+          <input id="pay-bill-pin" maxlength="4" minlength="4" type="password" class="input w-full bg-base-200 border-none outline-none rounded-full placeholder:text-[#969697]" placeholder="Enter 4 digit pin number" />
+          <button id="pay-bill-btn" class="btn btn-primary rounded-full mt-4 text-[1.25rem]">Pay Now</button>
+        </fieldset>
+      </div>
+        </div>
+     </section>
+     <!-- Pay Bill form Ended -->
       <!-- Payment Section -->
-    <section id="payment" class="mt-12 pb-5 space-y-4">
+    <section id="payment" class="mt-12 pb-5 space-y-4 hidden">
         <div class="w-11/12 mx-auto flex justify-between items-center">
             <h3 class="text-[#080808]/90 text-[1.125rem] font-semibold">Latest Payment</h3>
             <a class="text-[0.875rem] text-[#080808]/50" href="#">View All</a>

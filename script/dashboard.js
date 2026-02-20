@@ -121,3 +121,36 @@ document.getElementById("get-bonus-btn").addEventListener("click", function () {
         alert("Invalid Coupon")
     }
 })
+// Pay bill
+document.getElementById("pay-bill-btn").addEventListener("click", function () {
+    const selectBank = getValueFromInput("pay-bill-bank");
+    if (selectBank === "Select Bank") {
+        alert("Please Select a Bank");
+        return;
+    }
+    const payBillNumber = getValueFromInput("pay-bill-tel"); {
+        if (payBillNumber.length !== 11) {
+            alert("Invalid Number");
+            return;
+        }
+    }
+    const payBillAmount = Number(getValueFromInput("pay-bill-amount"));
+    const currentBalance = getBalance("current-balance");
+    if (payBillAmount <= 0) {
+        alert("Enter a Valid Amount");
+        return;
+    }
+    if (payBillAmount > currentBalance) {
+        alert("Insufficient Balance");
+        return;
+    }
+    const pin = getValueFromInput("pay-bill-pin");
+    if (pin.length !== 4) {
+        alert("Invalid Pin");
+        return;
+    }
+    const updateBalance = currentBalance - payBillAmount;
+    setBalance(updateBalance);
+    const time = new Date().toLocaleString()
+    alert(`Bill is Successfully Paid From ${selectBank} ${time}`)
+})

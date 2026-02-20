@@ -20,12 +20,16 @@ function showOnly (show) {
     const transferMoney = document.getElementById("transfer-money");
     const payment = document.getElementById("payment");
     const getBonus = document.getElementById("get-bonus");
+    const payBill = document.getElementById("pay-bill");
+    const payMent = document.getElementById("payment");
 
     addMoney.classList.add("hidden");
     cashOut.classList.add("hidden");
     transferMoney.classList.add("hidden");
     payment.classList.add("hidden");
     getBonus.classList.add("hidden");
+    payBill.classList.add("hidden");
+    payMent.classList.add("hidden");
 
     const showing = document.getElementById(show);
     
