@@ -1,17 +1,11 @@
 document.getElementById("login-btn").addEventListener("click", function () {
 
-    const inputNumber = document.getElementById("input-tel");
-    const numberValue = inputNumber.value;
-
-    const inputPin = document.getElementById("input-pin");
-    const pinValue = inputPin.value;
+    const numberValue = document.getElementById("input-tel").value;
+    const pinValue = document.getElementById("input-pin").value;
 
     if (numberValue.length === 11 && pinValue.length === 4) {
-
         alert("Login Successful");
-
-        window.location.assign("dashboard.html");
-
+        window.location.href = "dashboard.html";
     } else {
         alert("Invalid Login");
     }
