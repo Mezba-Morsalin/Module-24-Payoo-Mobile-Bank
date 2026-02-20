@@ -1,5 +1,5 @@
 document.getElementById("dashboard-btn").addEventListener("click", function (){
-    window.location.replace("/index.html")
+    window.location.replace("index.html")
 })
 const items = document.getElementsByClassName("div")
     for (const item of items) {
