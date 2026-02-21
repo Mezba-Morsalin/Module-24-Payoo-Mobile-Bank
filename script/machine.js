@@ -22,6 +22,7 @@ function showOnly (show) {
     const getBonus = document.getElementById("get-bonus");
     const payBill = document.getElementById("pay-bill");
     const payMent = document.getElementById("payment");
+    const history = document.getElementById("payment");
 
     addMoney.classList.add("hidden");
     cashOut.classList.add("hidden");
@@ -30,6 +31,7 @@ function showOnly (show) {
     getBonus.classList.add("hidden");
     payBill.classList.add("hidden");
     payMent.classList.add("hidden");
+    history.classList.add("hidden");
 
     const showing = document.getElementById(show);
     

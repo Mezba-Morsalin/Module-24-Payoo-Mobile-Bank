@@ -46,9 +46,17 @@ document.getElementById("cash-out-btn").addEventListener("click", function () {
 
     const newHistory = document.createElement("div")
     newHistory.innerHTML = `
-    <div class="transaction-class bg-base-200 p-5 mb-4 rounded-2xl">
-    Cash Out Successful $${cashOutAmount} From Payoo Agent ${agentNumber} at ${time}
-    </div>
+    <div class="w-11/12 mx-auto flex justify-between gap-3 items-center rounded-2xl p-4  bg-base-200">
+            <div class="flex items-center gap-5">
+                <div class= rounded-full">
+                    <img class="w-[40px]" src="./assets/opt-1.png" alt="">
+                </div>
+                <div class="transaction-class rounded-2xl">
+                Cash Out Successful $${cashOutAmount} From Payoo Agent ${agentNumber} at ${time}
+            </div>
+            </div>
+            <span class="cursor-pointer text-[#080808]/70"><i class="fa-solid fa-ellipsis"></i></span>
+        </div>
     `
     history.append(newHistory)
 })
@@ -89,9 +97,17 @@ document.getElementById("add-money-btn").addEventListener("click", function () {
     const newHistory = document.createElement("div");
 
     newHistory.innerHTML =`
-    <div class="transaction-class bg-base-200 p-5 mb-4 rounded-2xl">
-    Your Money Added Successfully $${addMoneyAmount}  From ${selectBank} at ${time}
-    </div>
+    <div class="w-11/12 mx-auto flex justify-between gap-3 items-center rounded-2xl p-4  bg-base-200">
+            <div class="flex items-center gap-5">
+                <div class= rounded-full">
+                    <img class="w-[40px]" src="./assets/opt-1.png" alt="">
+                </div>
+                <div class="transaction-class rounded-2xl">
+                Your Money Added Successfully $${addMoneyAmount}  From ${selectBank} at ${time}
+            </div>
+            </div>
+            <span class="cursor-pointer text-[#080808]/70"><i class="fa-solid fa-ellipsis"></i></span>
+        </div>
     `
     history.append(newHistory)
 })
@@ -130,9 +146,17 @@ document.getElementById("transfer-money-btn").addEventListener("click", function
     const history = document.getElementById("transaction-history");
     const newHistory = document.createElement("div");
     newHistory.innerHTML = `
-    <div class="transaction-class bg-base-200 p-5 mb-4 rounded-2xl">
-    Money Transfer Successfully $${transferAmount} to User Number ${userNumber} at ${time}
-    </div>
+    <div class="w-11/12 mx-auto flex justify-between gap-3 items-center rounded-2xl p-4  bg-base-200">
+            <div class="flex items-center gap-5">
+                <div class= rounded-full">
+                    <img class="w-[40px]" src="./assets/opt-1.png" alt="">
+                </div>
+                <div class="transaction-class rounded-2xl">
+                Money Transfer Successfully $${transferAmount} to User Number ${userNumber} at ${time}
+            </div>
+            </div>
+            <span class="cursor-pointer text-[#080808]/70"><i class="fa-solid fa-ellipsis"></i></span>
+        </div>
     `
     history.append(newHistory);
 })
@@ -151,11 +175,17 @@ document.getElementById("get-bonus-btn").addEventListener("click", function () {
     }
     const history = document.getElementById("transaction-history");
     const newHistory = document.createElement("div");
-    newHistory.innerHTML = `
-    <div class="transaction-class bg-base-200 p-5 mb-4 rounded-2xl">
-    Congratulations You Have Won 500$ From Payoo  ${time}
-    </div>
-    `
+    newHistory.innerHTML = `<div class="w-11/12 mx-auto flex justify-between items-center rounded-2xl p-4  bg-base-200">
+            <div class="flex justify-center items-center gap-5">
+                <div class= rounded-full">
+                    <img class="w-[40px]" src="./assets/opt-1.png" alt="">
+                </div>
+                <div class="transaction-class  rounded-2xl">
+                Congratulations You Have Won 500$ ${time}
+            </div>
+            </div>
+            <span class="cursor-pointer text-[#080808]/70"><i class="fa-solid fa-ellipsis"></i></span>
+        </div>`
     history.append(newHistory)
 })
 // Pay bill
@@ -194,9 +224,17 @@ document.getElementById("pay-bill-btn").addEventListener("click", function () {
     const history = document.getElementById("transaction-history");
     const newHistory = document.createElement("div");
     newHistory.innerHTML = `
-    <div class="transaction-class bg-base-200 p-5 mb-4 rounded-2xl">
-    Bill is Successfully Paid $${payBillAmount} From ${selectBank} ${time}
-    </div>
+    <div class="w-11/12 mx-auto flex justify-between gap-3 items-center rounded-2xl p-4  bg-base-200">
+            <div class="flex items-center gap-5">
+                <div class= rounded-full">
+                    <img class="w-[40px]" src="./assets/opt-1.png" alt="">
+                </div>
+                <div class="transaction-class rounded-2xl">
+                Bill is Successfully Paid $${payBillAmount} From ${selectBank} ${time}
+            </div>
+            </div>
+            <span class="cursor-pointer text-[#080808]/70"><i class="fa-solid fa-ellipsis"></i></span>
+        </div>
     `
     history.append(newHistory);
 })
